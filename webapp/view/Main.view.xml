@@ -1,0 +1,111 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:t="sap.ui.table" xmlns:core="sap.ui.core" controllerName="kvn.controller.Main">
+	<App>
+		<pages>
+			<Page title="Logon Pad">
+				<f:SimpleForm editable="true">
+					<f:content>
+						<Label text="Employee ID"/>
+						<!--Direct Binding-->
+						<Input id="empid" value="{/empStr/empId}" enabled="{/empStr/visible}"/>
+						<Label text="Name"/>
+						<!--Complex binding-->
+						<Input id="name" value="{ path: '/empStr/empName' }" enabled="{/empStr/visible}"/>
+						<Label text="Salary"/>
+						<Input id="salary" value="" enabled="{/empStr/visible}"/>
+						<Label text="Currency"/>
+						<Input id="currency" value="" enabled="{/empStr/visible}"/>
+						<Label visible="false"/>
+						<Button id="disable" text="Disable Input" press="onDisable" icon="sap-icon://cancel"/>
+						<Label visible="false"/>
+						<Button id="enable" text="Enable Input" press="onEnable" icon="sap-icon://activate"/>
+						<Label visible="false"/>
+						<Button id="datachg" text="Change Data" press="onDataChange" icon="sap-icon://refresh"/>
+					</f:content>
+				</f:SimpleForm>
+				<t:Table rows="{/empTable}" visibleRowCount="5" selectionMode="None">
+					<t:columns>
+						<t:Column>
+							<t:label>
+								<Text text="Employee ID"></Text>
+							</t:label>
+							<t:template>
+								<Text text="{empId}"></Text>
+							</t:template>
+						</t:Column>
+						<t:Column>
+							<t:label>
+								<Text text="Employee Name"></Text>
+							</t:label>
+							<t:template>
+								<Text text="{empName}"></Text>
+							</t:template>
+						</t:Column>
+						<t:Column>
+							<t:label>
+								<Text text="Gender"></Text>
+							</t:label>
+							<t:template>
+								<!--<Text text="{=${gender}=='male'? 'Mr' : 'Mrs'}">-->
+								<!--</Text>-->
+							</t:template>
+						</t:Column>
+						<!--<t:Column>-->
+						<!--	<t:label>-->
+						<!--		<Text text="Salary"></Text>-->
+						<!--	</t:label>-->
+						<!--	<t:template>-->
+						<!--		<Text text="{salary}"></Text>-->
+						<!--	</t:template>-->
+						<!--</t:Column>-->
+						<!--<t:Column>-->
+						<!--	<t:label>-->
+						<!--		<Text text="Currency"></Text>-->
+						<!--	</t:label>-->
+						<!--	<t:template>-->
+						<!--		<Text text="{currency}"></Text>-->
+						<!--	</t:template>-->
+						<!--</t:Column>-->
+						<t:Column>
+							<t:label>
+								<Text text="Salary"></Text>
+							</t:label>
+							<t:template>
+								<Text text="{salary} {currency}"></Text>
+							</t:template>
+						</t:Column>
+						<t:Column>
+							<t:label>
+								<Text text="Marital status"></Text>
+							</t:label>
+							<t:template>
+								<!--<image src+=+>-->
+								<Select selectedKey="{mstatus}">
+									<items>
+										<core:Item text="Married" key="Married"></core:Item>
+										<core:Item text="Single" key="Single"></core:Item>
+									</items>
+								</Select>
+							</t:template>
+						</t:Column>
+						<t:Column>
+							<t:label>
+								<Text text="Smoker"></Text>
+							</t:label>
+							<t:template>
+								<CheckBox selected="{smoker}"></CheckBox>
+							</t:template>
+						</t:Column>
+						<t:Column>
+							<t:label>
+								<Text text="Rating"></Text>
+							</t:label>
+							<t:template>
+								<RatingIndicator value="{rating}"></RatingIndicator>
+							</t:template>
+						</t:Column>						
+					</t:columns>
+				</t:Table>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

@@ -1,0 +1,55 @@
+{
+	"empStr" : {
+		"empId": 2,
+		"empName": "Ole",
+		"salary": 200000,
+		"currency": "GBP",
+		"visible": true
+	},
+	"empTable": [{
+		"empId": 21,
+		"empName": "Bruno",
+		"gender": "male",
+		"salary": 9000,
+		"currency": "GBP",
+		"smoker": true,
+		"mstatus": "Single",
+		"rating": 5
+	}, {
+		"empId": 22,
+		"empName": "Rashford",
+		"gender": "male",
+		"salary": 13000,
+		"currency": "GBP",
+		"smoker": true,
+		"mstatus": "Single",
+		"rating": 4
+	}, {
+		"empId": 23,
+		"empName": "Fred",
+		"gender": "female",
+		"salary": 3000,
+		"currency": "GBP",
+		"smoker": false,
+		"mstatus": "Married",
+		"rating": 3
+	}, {
+		"empId": 24,
+		"empName": "Maguire",
+		"gender": "female",
+		"salary": 14000,
+		"currency": "GBP",
+		"smoker": true,
+		"mstatus": "Single",
+		"rating": 2
+	}, {
+		"empId": 25,
+		"empName": "Pogba",
+		"gender": "male",
+		"salary": 11000,
+		"currency": "GBP",
+		"smoker": false,
+		"mstatus": "Married",
+		"rating": 3
+	}]
+}
